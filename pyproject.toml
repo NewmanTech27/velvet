@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "velvet-analyzer"
+version = "0.3.1"
+description = "Velvet — a clean-room, permissively-licensed static analysis framework for EVM smart contracts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Velvet Contributors" }]
+keywords = ["solidity", "static-analysis", "security", "ethereum", "smart-contracts"]
+dependencies = [
+    "py-solc-x>=2.0",
+    "packaging>=23",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+velvet = "velvet.cli:main"
+velvet-check-erc = "velvet.tools.check_erc:main"
+velvet-check-upgradeability = "velvet.tools.check_upgradeability:main"
+velvet-flat = "velvet.tools.flat:main"
+velvet-interface = "velvet.tools.interface:main"
+velvet-read-storage = "velvet.tools.read_storage:main"
+velvet-prop = "velvet.tools.prop:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: tests requiring solc compilation"]
