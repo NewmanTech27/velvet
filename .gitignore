@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+*.dot
+velvet-export/
+velvet.db.json
