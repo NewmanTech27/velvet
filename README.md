@@ -10,7 +10,7 @@ executing the code.
 
 ## Features
 
-- **62 vulnerability & quality detectors** out of the box (reentrancy incl.
+- **100 vulnerability & quality detectors** out of the box (reentrancy incl.
   modifier/internal-call inlining, access control, delegatecall, unchecked
   calls, token issues, shadowing, uninitialized variables, compiler bugs,
   gas optimizations, …) on a documented detector framework — write your own
